@@ -19,7 +19,7 @@ const headerHTML = `
 
 const footerHTML = `
     <footer>
-       <p>&copy; 2026 Mi Portfolio. Todos los derechos reservados. Versión 1.0</p>
+       <p>&copy; 2026 Mi Portfolio. Todos los derechos reservados. Versión 1.1</p>
     </footer>`;
 
 document.body.insertAdjacentHTML('afterbegin', headerHTML);
