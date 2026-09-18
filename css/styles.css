@@ -1,0 +1,132 @@
+/*	General styles */
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    BACKGROUND-COLOR: #a8b6c4;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*Styles from header*/
+header {
+    flex-shrink: 0; /* no se encoge */
+	background-color: #3b4d5f;
+}
+
+h1.title-header {
+	text-align: center;
+	color: white;
+	margin: 0;
+	padding: 5px 0;
+	font-size: 2em;
+}
+
+h2.subtitle-header {
+	text-align: center;
+	color: white;
+	margin: 0;
+	padding: 5px 0;
+	font-size: 1em;
+}
+
+h3.subtitle-header {
+	text-align: center;
+	color: white;
+	margin: 0;
+	padding: 5px 0;
+	font-size: 0.75em;
+}
+
+nav {
+	margin: 20px auto 0;
+	position: relative;
+	width: 750px;
+	height: 50px;
+	background-color: #475e75;
+	border-radius: 8px;
+	font-size: 0;
+	    
+}
+nav a {
+	line-height: 50px;
+	height: 100%;
+	font-size: 15px;
+	display: inline-block;
+	position: relative;
+	z-index: 1;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: center;
+	color: white;
+	cursor: pointer;
+}
+nav .animation {
+	position: absolute;
+	height: 100%;
+	top: 0;
+	z-index: 0;
+	transition: all .5s ease 0s;
+	border-radius: 8px;
+}
+
+
+nav a:nth-child(1) { width: 100px; }
+nav a:nth-child(2) { width: 110px; }
+nav a:nth-child(3) { width: 100px; }
+nav a:nth-child(4) { width: 160px; }
+nav a:nth-child(5) { width: 120px; }
+nav a:nth-child(6) { width: 160px; }
+nav .start-home, nav a:nth-child(1):hover~.animation {
+	width: 100px;
+	left: 0;
+	background-color: #9dd8f0;
+}
+nav .start-about, nav a:nth-child(2):hover~.animation {
+	width: 110px;
+	left: 100px;
+	background-color: #87d2f0;
+}
+nav .start-blog, nav a:nth-child(3):hover~.animation {
+	width: 100px;
+	left: 210px;
+	background-color: #5ec9f3;
+}
+nav .start-portefolio, nav a:nth-child(4):hover~.animation {
+	width: 160px;
+	left: 310px;
+	background-color: #1eb3ee;
+}
+nav .start-tools, nav a:nth-child(5):hover~.animation {
+	width: 120px;
+	left: 470px;
+	background-color: #08749e;
+}
+nav .start-contact, nav a:nth-child(6):hover~.animation {
+	width: 160px;
+	left: 590px;
+	background-color: #044964;
+}
+
+
+
+/*	Styles from main*/
+main {
+    flex: 1;        /* ocupa todo el espacio libre */
+    overflow-y: auto; /* ← solo este hace scroll */
+	margin: 0 auto;
+	padding: 20px;
+	max-width: 800px;
+}
+
+
+/*	Styles from footer*/
+footer {
+	text-align: center;
+    flex-shrink: 0; /* no se encoge */
+	background-color: #3b4d5f;
+	font-size: 0.65em;
+}
