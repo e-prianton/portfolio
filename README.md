@@ -18,10 +18,16 @@ Al principio, será una web tosca sin demasiado formato, a medida que avance el 
 
 # Versiones
 
+## Versión V1.2
+
+- Se ha mejorado el formato general
+- Se ha actualizado la sección "Proyectos" cambiando el formato de la presentación de lista a un timeline, para hacerlo más dinámico y visual.
+- Se han añadido iconos de contacto para mejorar visualización.
+---
 ## Versión V1.1
 
 Mejorar estructura proyecto y darle un formato más visual al menú
-
+----
 ## Versión V1.0
 
 El proyecto contendrá los archivos mínimos y la información básica para tener una página web lista y funcional en poco tiempo. Será una web tosca sin demasiado formato.

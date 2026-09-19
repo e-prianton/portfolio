@@ -19,7 +19,8 @@ const headerHTML = `
 
 const footerHTML = `
     <footer>
-       <p>&copy; 2026 Mi Portfolio. Todos los derechos reservados. Versión 1.1</p>
+       <p>&copy; 2026 Mi Portfolio. Todos los derechos reservados. Versión 1.2</p>
+       <a href="https://www.flaticon.es/iconos-gratis/linkedin" title="Iconos">Iconos creados por Magnific - Flaticon</a>
     </footer>`;
 
 document.body.insertAdjacentHTML('afterbegin', headerHTML);
@@ -27,12 +28,13 @@ document.body.insertAdjacentHTML('beforeend', footerHTML);
 
 
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-    const classMap = ['start-home','start-about','start-blog','start-portefolio','start-tools','start-contact'];   
+    const classMap = ['start-home','start-about','start-projects','start-skills','start-tools','start-contact'];   
     const links = document.querySelectorAll('nav a');
 
     links.forEach(function(link, i) {
         if (link.getAttribute('href') === currentPage) {
             document.querySelector('nav .animation').className = 'animation ' + classMap[i];
+            link.classList.add('active');
         }
     });
 

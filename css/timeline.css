@@ -1,0 +1,177 @@
+/*
+  timeline.css
+  Estilos para la sección de línea de tiempo.
+*/
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Línea central */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--accent), transparent);
+}
+
+/* Cada item */
+.tl-item {
+  position: relative;
+  display: flex;
+  margin-bottom: 4rem;
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.6s ease;
+}
+
+.tl-item.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Alternar izquierda/derecha */
+.tl-item:nth-child(odd) { justify-content: flex-start; }
+.tl-item:nth-child(even) { justify-content: flex-end; }
+
+/* Punto en la línea */
+.tl-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 1.5rem;
+  width: 14px;
+  height: 14px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+/* Tarjeta */
+.tl-card {
+  width: calc(50% - 30px);
+  padding: 1.8rem;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 12px;
+  backdrop-filter: blur(12px);
+}
+
+.tl-card .year {
+  font-size: 0.85rem;
+  color: var(--accent);
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.tl-card h3 {
+  color: #fff;
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.tl-card p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--text);
+}
+
+/* Toggle */
+.tl-toggle {
+  margin-top: 1rem;
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 0.85rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: inherit;
+}
+
+.tl-arrow {
+  transition: transform 0.3s;
+  display: inline-block;
+}
+
+.tl-toggle[aria-expanded="true"] .tl-arrow {
+  transform: rotate(180deg);
+}
+
+.tl-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.tl-content.open {
+  padding-top: 0.75rem;
+}
+
+.tl-list {
+  margin: 0;
+  padding: 0 0 0 1rem;
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--text);
+}
+
+.tl-list li::marker {
+  color: var(--accent);
+}
+
+.tl-subproject {
+  margin-bottom: 1rem;
+}
+
+.tl-subproject:last-child {
+  margin-bottom: 0;
+}
+
+.tl-subproject h4 {
+  font-size: 0.8rem;
+  color: #fff;
+  font-weight: 600;
+  margin: 0 0 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.tl-subproject .tl-list {
+  margin-left: 0.5rem;
+}  
+.tl-subproject h4:empty {
+  display: none;
+}    
+
+/* Tarjetas del mismo grupo: borde lateral de color */
+.tl-item--sopra .tl-card {
+  border-left: 3px solid var(--accent);
+}
+
+/* Opcional: separación reducida entre items del mismo grupo */
+.tl-item--sopra {
+  margin-bottom: 1.5rem;  /* vs 4-5rem de los demás */
+}
+
+/* Último del grupo recupera el margen normal */
+.tl-item--sopra:last-of-type {
+  margin-bottom: 4rem;
+}   
+
+/* Responsive */
+@media (max-width: 768px) {
+  .timeline::before { left: 10px; }
+  .tl-item::after { left: 10px; }
+  .tl-item,
+  .tl-item:nth-child(even) { justify-content: flex-start; }
+  .tl-card { width: calc(100% - 40px); margin-left: 40px; }
+}   
